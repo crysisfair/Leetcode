@@ -4,7 +4,7 @@ SRC=utils.cpp YanghuiTriangle.cpp Main.cpp
 OBJ=$(SRC:.c=.o)
 TARGET=leetcode
 INC=-I ../Includes
-CFLAGS=-Wall -lstdc++
+CFLAGS=-Wall -lstdc++ -m32 -g
 
 $(TARGET):$(OBJ)
 	$(CC) $(CFLAGS) $(INC) -o $@ $^

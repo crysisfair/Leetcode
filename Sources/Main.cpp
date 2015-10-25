@@ -4,17 +4,15 @@
 #include <string.h>
 
 using namespace std;
-char * mycpy(char * target, const char * src) {
-    while(*src != '\0') {
-        *target ++ = *src ++;
-    }
-    return target;
-}
+
 int main(void) {
-    const char *p = "abcd";
-    char target[30] = "this is a long sentense.";
-    mycpy(target + 4, p);
-    cout << target << endl;
+    int calendar[12][31];
+    int (*month)[31];
+    for(month = calendar; month < &calendar[12]; month++) {
+        for(int *day = *month, i = 1; day < &(*month)[31]; day++, i++) {
+            *day = i;
+        }
+    }
     getchar();
     return 0;
 }
